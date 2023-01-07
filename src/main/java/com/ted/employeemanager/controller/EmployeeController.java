@@ -1,4 +1,4 @@
-package com.ted.employeemanager;
+package com.ted.employeemanager.controller;
 
 
 import com.ted.employeemanager.model.Employee;
@@ -11,10 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/employee")
-public class EmployeeResource {
+public class EmployeeController {
     private final EmployeeService employeeService;
 
-    public EmployeeResource(EmployeeService employeeService){
+    public EmployeeController(EmployeeService employeeService){
         this.employeeService =employeeService;
     }
     @GetMapping("/")
@@ -32,11 +32,13 @@ public class EmployeeResource {
         Employee newEmployee = employeeService.addEmployee(employee);
         return new ResponseEntity<>(newEmployee, HttpStatus.CREATED);
     }
+
     @PutMapping("/")
-    public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee){
+    public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
         Employee updatedEmployee = employeeService.addEmployee(employee);
         return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id){
        employeeService.deleteEmployee(id);

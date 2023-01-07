@@ -2,9 +2,10 @@
 ### This open source project is made by using Java Spring Boot
 
 📑 To use:
-- Build the project and run the server.
-- Open Web browser on `localhost:8080/api/v1/employee/`
-- READ,CREATE,UPDATE and DELETE employees using PostMan or other tools to make the request on API.
+The project use Maven dependency manager tool.
+- Build and run the project.
+- Swagger documentation url: `http://localhost:8080/swagger-ui/index.html#/`
+- Access link `localhost:8080/api/v1/employee/` on PostMan or Insomnia, .... to make requests on API.
 - Json Data Model:
 ``` 
         {
@@ -15,3 +16,4 @@
         "imageUrl": "www.test.com"
         }
 ```
+- Tests: run units tests with `mvn test`
